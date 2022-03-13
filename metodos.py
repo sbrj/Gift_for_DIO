@@ -14,11 +14,10 @@ def getXpath(driver: object, xpath: str) -> None:
     return None
 
 def getText(driver: object, text: str) -> None:
-    sleep(2)
-    result = driver.find_element(by=By.PARTIAL_LINK_TEXT, value=text)
-    result.click()
-    sleep(2)
-    return None
+    sleep(4)
+    result = driver.find_elements(by=By.XPATH, value=text)
+    sleep(4)
+    return result
 
 def getEndPage(driver: object) -> None:       
         html = driver.find_element_by_tag_name('html')
@@ -27,6 +26,12 @@ def getEndPage(driver: object) -> None:
             sleep(0.5)
         html.send_keys(Keys.END)
         sleep(3)
+        return None
+
+def getTopPage(driver: object) -> None:  
+        html = driver.find_element_by_tag_name('html')     
+        html.send_keys(Keys.HOME)
+        sleep(2)
         return None
 
 def listaBoots(driver: object) -> list:  
@@ -38,11 +43,26 @@ def listaBoots(driver: object) -> list:
         sleep(5)
         return lista
 
-def manipulaArquivo(c_refinados: list) -> None:
-    with open('cursos.txt', 'w', encoding='utf8') as arquivo:
+def manipulaArquivo(c_refinados: list, arq: str) -> None:
+    with open(arq, 'w', encoding='utf8') as arquivo:
         for index, linha in enumerate(c_refinados):
                 arquivo.write(str(index))
                 arquivo.write(' - ')
                 arquivo.write(linha)
                 arquivo.write('\n')
+    return None
+
+def manipulaDevs(c_refinados: list, arq: str) -> None:
+    #sequencia = 1
+    with open(arq, 'a', encoding='utf8') as arquivo:
+        for index, linha in enumerate(c_refinados):
+            if (index % 2 == 0):
+                #arquivo.write(str(sequencia))
+                #arquivo.write(' - ')
+                arquivo.write(linha)
+            else:
+                arquivo.write('|')
+                arquivo.write(linha)
+                arquivo.write('\n')
+                #sequencia += 1
     return None

@@ -15,5 +15,8 @@ esquecer = '/html/body/div[4]/div/div[1]/div/div/div/div/div/div[2]/div/div[3]/b
 camps = '/html/body/div[1]/div/header/nav/ul/li[2]/a/span'
 cognizant = "//*[contains(text(), 'Cognizant Cloud Data Engineer #2')]"
 conteudo = '/html/body/div[1]/div/div[2]/div[3]/div[1]/div/button'
+todos_devs = "//*[contains(text(), 'VER TODOS')]"
+devs_lista = '//a[contains(@href,"/track/users/")]'
+
 
 
