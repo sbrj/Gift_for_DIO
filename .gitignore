@@ -1,0 +1,4 @@
+*.txt
+#/login.py
+__pycache__/
+*.log
