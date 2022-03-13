@@ -1,5 +1,5 @@
 from imports import *
-from metodos import getDriver, getXpath, getEndPage, listaBoots, manipulaArquivo
+from metodos import getDriver, getText, getXpath, getEndPage, listaBoots, manipulaArquivo
 from secrets import DadosSecretos
 
 driver = getDriver()
@@ -12,6 +12,7 @@ senha = DadosSecretos(driver, xpath_senha, password, 'y')
 getXpath(driver, esquecer)
 getXpath(driver, camps)
 getXpath(driver, cognizant)
+getXpath(driver, conteudo)
 
 #vai até final pagina
 getEndPage(driver)
@@ -19,7 +20,7 @@ getEndPage(driver)
 #lista todos os cursos do bootcamp
 lista = listaBoots(driver)
 cursos = [curso.text for curso in lista]
-cursos_refinados = cursos[1:-6]
+cursos_refinados = cursos[1:-1]
 
 #grava, com índice, em um arquivo *.txt
 manipulaArquivo(cursos_refinados)

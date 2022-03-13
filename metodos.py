@@ -13,11 +13,19 @@ def getXpath(driver: object, xpath: str) -> None:
     sleep(2)
     return None
 
+def getText(driver: object, text: str) -> None:
+    sleep(2)
+    result = driver.find_element(by=By.PARTIAL_LINK_TEXT, value=text)
+    result.click()
+    sleep(2)
+    return None
+
 def getEndPage(driver: object) -> None:       
         html = driver.find_element_by_tag_name('html')
         for i in range(12):
             html.send_keys(Keys.PAGE_DOWN)
             sleep(0.5)
+        html.send_keys(Keys.END)
         sleep(3)
         return None
 
@@ -25,8 +33,8 @@ def listaBoots(driver: object) -> list:
         sleep(5)      
         #lista = WebDriverWait(driver, 120, 30).until(
         #        expect.visibility_of_any_elements_located(
-        #        (By.XPATH, "//h5")))
-        lista = driver.find_elements(By.XPATH, value="//h5")
+        #        (By.XPATH, "//h3")))
+        lista = driver.find_elements(By.XPATH, value="//h3")
         sleep(5)
         return lista
 

@@ -13,4 +13,7 @@ xpath_login = "//input[@placeholder='Digite seu e-mail']"
 xpath_senha = "//input[@placeholder='Digite sua senha']"
 esquecer = '/html/body/div[4]/div/div[1]/div/div/div/div/div/div[2]/div/div[3]/button'
 camps = '/html/body/div[1]/div/header/nav/ul/li[2]/a/span'
-cognizant = '/html/body/div[1]/div/div/main/div/div/div[2]/div/div/div/div[1]/a/div/div[1]/div/div/h6'
+cognizant = "//*[contains(text(), 'Cognizant Cloud Data Engineer #2')]"
+conteudo = '/html/body/div[1]/div/div[2]/div[3]/div[1]/div/button'
+
+

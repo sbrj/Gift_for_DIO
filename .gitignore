@@ -1,4 +1,4 @@
 *.txt
-#/login.py
+/login.py
 __pycache__/
 *.log
