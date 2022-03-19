@@ -1,3 +1,4 @@
+from unicodedata import numeric
 from login import email, senha
 def __setEmail() -> str:
     v_email = email
@@ -17,6 +18,7 @@ cognizant = "//*[contains(text(), 'Cognizant Cloud Data Engineer #2')]"
 conteudo = '/html/body/div[1]/div/div[2]/div[3]/div[1]/div/button'
 todos_devs = "//*[contains(text(), 'VER TODOS')]"
 devs_lista = '//a[contains(@href,"/track/users/")]'
+pega_xp = ''
 
 
 
