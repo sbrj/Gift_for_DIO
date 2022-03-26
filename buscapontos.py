@@ -11,8 +11,6 @@ senha = DadosSecretos(driver, xpath_senha, password, 'y')
 sleep(2)
 getXpath(driver, esquecer)
 
-
-
 import csv
 #from metodos import getDriver, getXpath
 
@@ -33,15 +31,19 @@ try:
                 break
             else:
             ''' 
-            getDriverUSR(driver, usuario[-1])
-            sleep(4)
-            pontos = getText(driver, '/html/body/div[1]/div/div/main/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div[2]/div[4]/div/span')
-            #print('pontos - ', pontos)
-            #print('pontos.text - ', pontos[0].text)
-            xp = [pt.text.split(' / ')[0].split(' ')[1] for pt in pontos]
-            dict_pontos[usuario[-1]] = xp[0]
-            manipulaXP(dict_pontos, 'pontos.csv')
-            sleep(0.5)
+            try:    
+                getDriverUSR(driver, usuario[-1])
+                sleep(4)
+                pontos = getText(driver, '/html/body/div[1]/div/div/main/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div[2]/div[4]/div/span')
+                #print('pontos - ', pontos)
+                #print('pontos.text - ', pontos[0].text)
+                xp = [pt.text.split(' / ')[0].split(' ')[1] for pt in pontos]
+                dict_pontos[usuario[-1]] = xp[0]
+            except:
+                dict_pontos[usuario[-1]] = 0
+            finally:
+                manipulaXP(dict_pontos, 'pontos.csv')
+                sleep(0.5)
             dict_pontos.clear()
 
 except Exception as error:

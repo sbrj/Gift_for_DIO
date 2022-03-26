@@ -6,7 +6,7 @@ print(ini)
 if __name__ == "__main__":
     try:    
         from bootcamps import *
-        from buscadevs import *
+        #from buscadevs import *
     except Exception as error:
         print('Erro Main: ', error)
     finally:

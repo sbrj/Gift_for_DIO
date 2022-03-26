@@ -75,9 +75,13 @@ def manipulaArquivo(c_refinados: list, arq: str) -> None:
 
 def getCidadeEstado(cid_est: str) -> str:
     if cid_est != '':
-        dados = cid_est.split(' - ')
-        cid = dados[0]
-        est = dados[1]
+        if '-' in cid_est:
+            dados = cid_est.split(' - ')
+            cid = dados[0]
+            est = dados[1]
+        else:
+            cid = cid_est
+            est = ''
     else:
         cid = ''
         est = ''

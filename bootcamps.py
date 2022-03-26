@@ -14,20 +14,20 @@ try:
     getXpath(driver, esquecer)
     getXpath(driver, camps)
     getXpath(driver, cognizant)
+    '''
+        getXpath(driver, conteudo)
 
-    getXpath(driver, conteudo)
+        #vai até final pagina
+        getEndPage(driver)
 
-    #vai até final pagina
-    getEndPage(driver)
+        #lista todos os cursos do bootcamp
+        lista = listaBoots(driver)
+        cursos = [curso.text for curso in lista]
+        cursos_refinados = cursos[1:-1]
 
-    #lista todos os cursos do bootcamp
-    lista = listaBoots(driver)
-    cursos = [curso.text for curso in lista]
-    cursos_refinados = cursos[1:-1]
-
-    #grava, com índice, em um arquivo *.txt
-    manipulaArquivo(cursos_refinados, 'cursos.txt')
-   
+        #grava, com índice, em um arquivo *.txt
+        manipulaArquivo(cursos_refinados, 'cursos.txt')
+    '''
 except Exception as error:
     print('Erro Bootcamps: ', error)
 finally:
